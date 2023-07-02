@@ -1,0 +1,40 @@
+.input-wrapper {
+  position: relative;
+
+  // &__inner {
+  //   width: 100%;
+  // }
+
+  &__icon {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    aspect-ratio: 1 / 1;
+    @extend %mask-svg;
+    background-color: $color-text-secondary;
+    transition: .3s ease;
+    pointer-events: none;
+
+    &--search {
+      --mask-svg-url: url('@img/icons.svg#search');
+    }
+  
+    &--linkedin {
+      --mask-svg-url: url('@img/icons.svg#linkedin');
+    }
+  
+    &--twitter {
+      --mask-svg-url: url('@img/icons.svg#twitter');
+    }
+  
+    &--user {
+      --mask-svg-url: url('@img/icons.svg#user');
+    }
+  }
+}
+
+.input:focus + .input-wrapper__icon {
+  background-color: $color-text-main;
+}

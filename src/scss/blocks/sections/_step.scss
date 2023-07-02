@@ -1,0 +1,78 @@
+.step {
+  // --step-offset-top: js;
+  // --step-transition: root
+
+  position: relative;
+  top: var(--step-offset-top);
+  width: 100%;
+  transition: var(--step-transition);
+  // outline: 2px dotted blueviolet;
+
+  @for $i from 1 through 10 {
+    &--#{$i} {
+      --index: #{$i};
+    }
+  }
+
+  &__header {
+    margin-bottom: 39px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    @extend %text-title-lg;
+  }
+
+  &__description {
+    max-width: 595px;
+    margin-bottom: 40px;
+    @extend %text-description;
+  }
+
+  &__control {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    &--margin-top--sm {
+      margin-top: 62px;
+    }
+    
+    &--margin-top--md {
+      margin-top: 82px;
+    }
+
+    &--margin-top--lg {
+      margin-top: 119px;
+    }
+  }
+
+  &__message {
+    @extend %font-medium;
+    @extend %font-size-text-md;
+    color: $color-text-main;
+  }
+}
+
+@include breakpoint-down(sm) {
+  .step__control {
+    &--margin-top--sm {
+      margin-top: 52px;
+    }
+    
+    &--margin-top--md {
+      margin-top: 62px;
+    }
+
+    &--margin-top--lg {
+      margin-top: 89px;
+    }
+  }
+
+  .step__message {
+    position: absolute;
+    left: 0;
+    top: -30px;
+  }
+}

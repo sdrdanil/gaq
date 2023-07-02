@@ -1,0 +1,110 @@
+@mixin background-behavior($step-1-position-x, $color-fill, $color-empty) {
+  background-image: linear-gradient(90deg, $color-fill 50%, $color-empty 50%);
+  background-repeat: no-repeat;
+  background-size: var(--background-size-x) var(--circle-size);
+  background-position: calc($step-1-position-x + var(--delta)) center;
+  transition: var(--step-transition);
+  will-change: background-size, background-position;
+}
+
+.progress {
+  // --width: js;
+  // --step: js;
+  // --steps-number: root;
+  // --step-transition: root
+
+  --baseWidth: 650px;
+  --width: var(--baseWidth);
+
+  --background-size-x-ratio: 4;
+  --circle-size: 50px;
+  --icon-size: 28px;
+  --border-width: 2px;
+  --color-border-fill: #{$color-main};
+  --color-border-empty: #{$color-border};
+  --color-background-fill: #{$color-main};
+  --color-background-empty: #{$color-background};
+  --color-icon-fill: #{$color-background};
+  --color-icon-empty: #{$color-icon};
+
+  --background-size-x: calc(var(--width) * var(--background-size-x-ratio));
+  --step-width: calc((var(--width) - var(--circle-size)) / (var(--steps-number) - 1));
+  --delta: calc((var(--step) - 1) * var(--step-width));
+  --line-step-1-position-x: calc(0px - (var(--width) * var(--background-size-x-ratio) / 2) + var(--circle-size));
+
+
+  &__bar {
+    position: relative;
+    width: var(--baseWidth);
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: var(--border-width);
+      transform: translateY(-50%);
+      @include background-behavior(var(--line-step-1-position-x),
+        var(--color-border-fill),
+        var(--color-border-empty));
+    }
+  }
+
+  &__item {
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        --index: #{$i};
+      }
+    }
+    --item-step-1-position-x: calc(var(--line-step-1-position-x) - (var(--index) - 1) * var(--step-width));
+
+    position: relative;
+    width: var(--circle-size);
+    height: var(--circle-size);
+    border-radius: 50%;
+    @include background-behavior(var(--item-step-1-position-x),
+      var(--color-border-fill),
+      var(--color-border-empty));
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: var(--border-width);
+      border-radius: 50%;
+      @include background-behavior(calc(var(--item-step-1-position-x) - (var(--border-width) / 2)),
+        var(--color-background-fill),
+        var(--color-background-empty));
+    }
+
+    // icon
+    &::after {
+      // --icon: html
+      @extend %mask-svg;
+      --mask-svg-url: var(--icon);
+
+      content: '';
+      position: absolute;
+      inset: calc((var(--circle-size) - var(--icon-size)) / 2);
+      @include background-behavior(calc(var(--item-step-1-position-x) - (var(--icon-size) / 2)),
+        var(--color-icon-fill),
+        var(--color-icon-empty));
+    }
+  }
+}
+
+@include breakpoint-down(md) {
+  .progress {
+    --circle-size: 44px;
+    --icon-size: 24px;
+  }
+}
+
+@include breakpoint-down(sm) {
+  .progress {
+    --circle-size: 38px;
+    --icon-size: 18px;
+  }
+}

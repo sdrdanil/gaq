@@ -1,0 +1,16 @@
+.form-profile {
+  display: flex;
+  gap: 40px;
+
+  @include breakpoint-down(md) {
+    flex-wrap: wrap;
+  }
+
+  &__fieldset {
+    flex-grow: 1;
+  }
+
+  &__input {
+    flex-basis: 720px;
+  }
+}

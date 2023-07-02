@@ -1,0 +1,9 @@
+.header {
+  padding-bottom: 74px;
+}
+
+@include breakpoint-down(sm) {
+  .header {
+    padding-bottom: 40px;
+  }
+}

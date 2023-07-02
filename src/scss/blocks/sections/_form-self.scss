@@ -1,0 +1,10 @@
+.form-self {
+  &__fieldset {
+    max-width: 930px;
+  }
+
+  &__input {
+    // flex: 1 1 auto;
+    flex-grow: 1;
+  }
+}

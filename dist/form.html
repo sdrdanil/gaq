@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  function isWebp() {
+    function testWebP(callback) {
+      var webP = new Image();
+      webP.onload = webP.onerror = function () {
+        callback(webP.height == 2);
+      };
+      webP.src =
+        'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+    }
+
+    testWebP(function (support) {
+      if (support == true) {
+        document.querySelector('html').classList.add('webp');
+      } else {
+        document.querySelector('html').classList.add('no-webp');
+      }
+    });
+  }
+
+  isWebp();
+</script>
+  <link href="css/style.min.css?_v=20230620160853" rel="stylesheet">
+  
+  <script defer src="js/app.min.js?_v=20230620160853"></script>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>GAQ Form</title>
+</head>
+
+<body class="body-form">
+  <header class="header" id="header">
+    <h1 class="visually-hidden">GAQ</h1>
+    <img class="header__logo" src="./img/icons.svg#logo" alt="logo" width="68" height="31">
+  </header>
+
+  <main class="main">
+    <section class="multi-form">
+      <h2 class="visually-hidden">Multi Form</h2>
+      <section class="multi-form__progress progress">
+        <h3 class="visually-hidden">Progress</h3>
+        <div class="progress__bar">
+          <div class="progress__item" style="--icon: url('../img/icons.svg#location');"></div>
+          <div class="progress__item" style="--icon: url('../img/icons.svg#crown');"></div>
+          <div class="progress__item" style="--icon: url('../img/icons.svg#frame');"></div>
+          <div class="progress__item" style="--icon: url('../img/icons.svg#heart');"></div>
+          <div class="progress__item" style="--icon: url('../img/icons.svg#user-tag');"></div>
+        </div>
+      </section>
+
+      <section class="multi-form__steps">
+        <h3 class="visually-hidden">Steps forms</h3>
+
+        <section class="step step--1">
+          <header class="step__header">
+            <h4 class="step__title">Which Hub Are You In?</h4>
+            <p class="step__description">
+              We are active in major cities and we schedule meetings based on time zones. Let us know your home base.
+            </p>
+            <label class="input-wrapper">
+              <input class="input-wrapper__inner input input--size--md input--icon" type="text" name="search-hub"
+                placeholder="Search your hub.." tabindex="-1">
+              <span class="input-wrapper__icon input-wrapper__icon--search"></span>
+            </label>
+          </header>
+          <div class="step__content">
+            <form class="form-hub">
+              <fieldset class="form-hub__fieldset fieldset">
+                <legend class="fieldset__legend">Popular Hub</legend>
+                <div class="fieldset__grid">
+                  <label class="card card--radio">
+  <input class="card__input-hidden" type="radio" name="hub" value="austin" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/hub/austin.webp" type="image/webp">
+        <img class="card__image" src="./img/hub/austin.png" alt="Austin icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Austin</span>
+  </span>
+</label>
+<label class="card card--radio">
+  <input class="card__input-hidden" type="radio" name="hub" value="dallas" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/hub/dallas.webp" type="image/webp">
+        <img class="card__image" src="./img/hub/dallas.png" alt="Dallas icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Dallas</span>
+  </span>
+</label>
+<label class="card card--radio">
+  <input class="card__input-hidden" type="radio" name="hub" value="san-antonio" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/hub/san-antonio.webp" type="image/webp">
+        <img class="card__image" src="./img/hub/san-antonio.png" alt="San Antonio icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">San Antonio</span>
+  </span>
+</label>
+<label class="card card--radio">
+  <input class="card__input-hidden" type="radio" name="hub" value="houston" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/hub/houston.webp" type="image/webp">
+        <img class="card__image" src="./img/hub/houston.png" alt="Houston icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Houston</span>
+  </span>
+</label>
+<label class="card card--radio">
+  <input class="card__input-hidden" type="radio" name="hub" value="new-york" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/hub/new-york.webp" type="image/webp">
+        <img class="card__image" src="./img/hub/new-york.png" alt="New York icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">New York</span>
+  </span>
+</label>
+<label class="card card--radio">
+  <input class="card__input-hidden" type="radio" name="hub" value="los-angeles" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/hub/los-angeles.webp" type="image/webp">
+        <img class="card__image" src="./img/hub/los-angeles.png" alt="Los Angeles icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Los Angeles</span>
+  </span>
+</label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="step__control step__control--margin-top--md">
+            <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
+            <span class="step__message"></span>
+          </div>
+        </section>
+
+        <section class="step step--2">
+          <header class="step__header">
+            <h4 class="step__title">What Are Your Objectives?</h4>
+            <p class="step__description">
+              Select up to 3 objectives. These will be kept private from other users but help us find relevant matches.
+            </p>
+          </header>
+          <div class="step__content">
+            <form class="form-objectives">
+              <fieldset class="form-objectives__fieldset fieldset">
+                <legend class="fieldset__legend">Select Objectives</legend>
+                <div class="fieldset__grid">
+                  <label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="brainstorm-with-peers" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/brainstorm-with-peers.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/brainstorm-with-peers.png" alt="Brainstorm with peers icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Brainstorm with peers</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="grow-your-team" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/grow-your-team.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/grow-your-team.png" alt="Grow your team icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Grow your team</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="start-a-company" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/start-a-company.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/start-a-company.png" alt="Start a company icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Start a company</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="explore-other-companies" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/explore-other-companies.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/explore-other-companies.png" alt="Explore other companies icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Explore other companies</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="business-development" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/business-development.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/business-development.png" alt="Business development icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Business development</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="invest" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/invest.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/invest.png" alt="Invest icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Invest</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="explore-new-projects" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/explore-new-projects.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/explore-new-projects.png" alt="Explore new projects icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Explore new projects</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="mentor-others" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/mentor-others.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/mentor-others.png" alt="Mentor others icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Mentor others</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="organize-events" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/organize-events.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/organize-events.png" alt="Organize events icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Organize events</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="raise-funding" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/raise-funding.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/raise-funding.png" alt="Raise funding icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Raise funding</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="find-a-cofounder" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/find-a-cofounder.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/find-a-cofounder.png" alt="Find a cofounder icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Find a cofounder</span>
+  </span>
+</label>
+<label class="card card--checkbox">
+  <input class="card__input-hidden" type="checkbox" name="objectives" value="meet-intresting-people" tabindex="-1">
+  <span class="card__visual">
+    <span class="card__image-box">
+      <picture>
+        <source srcset="./img/objectives/meet-intresting-people.webp" type="image/webp">
+        <img class="card__image" src="./img/objectives/meet-intresting-people.png" alt="Meet intresting people icon" width="40" height="40">
+      </picture>
+    </span>
+    <span class="card__text">Meet intresting people</span>
+  </span>
+</label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="step__control step__control--margin-top--sm">
+            <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
+            <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
+            <span class="step__message"></span>
+          </div>
+        </section>
+
+        <section class="step step--3">
+          <header class="step__header">
+            <h4 class="step__title">Fill Your Profile</h4>
+            <p class="step__description">
+              This basic information will be shown to your matches every week. Tell us what you would like to show!
+            </p>
+          </header>
+          <div class="step__content">
+            <form class="form-profile">
+              <label class="upload-file">
+                <span class="upload-file__visual">
+                  <span class="upload-file__group">
+                    <span class="upload-file__text">Upload Your Photo</span>
+                  </span>
+                </span>
+                <input class="upload-file__input-hidden" type="file" name="photo" tabindex="-1">
+              </label>
+              <fieldset class="form-profile__fieldset fieldset">
+                <legend class="fieldset__legend">Other Profile</legend>
+                <div class="fieldset__flex">
+                  <label class="form-profile__input input-wrapper">
+                    <input class="input-wrapper__inner input input--size--stretch input--icon" type="text" name="linkedin"
+                      placeholder="LinkedIn URL" tabindex="-1">
+                    <span class="input-wrapper__icon input-wrapper__icon--linkedin"></span>
+                  </label>
+                  <label class="form-profile__input input-wrapper">
+                    <input class="input-wrapper__inner input input--size--stretch input--icon" type="text" name="twitter"
+                      placeholder="Twitter URL" tabindex="-1">
+                    <span class="input-wrapper__icon input-wrapper__icon--twitter"></span>
+                  </label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="step__control step__control--margin-top--md">
+            <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
+            <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
+            <span class="step__message"></span>
+          </div>
+        </section>
+
+        <section class="step step--4">
+          <header class="step__header">
+            <h4 class="step__title">What Are You Interested In?</h4>
+            <p class="step__description">
+              Select from the list and add your own interests.
+            </p>
+            <label class="input-wrapper">
+              <input class="input-wrapper__inner input input--size--md input--icon" type="text" name="search-interest"
+                placeholder="Add Your Interest" tabindex="-1">
+              <span class="input-wrapper__icon input-wrapper__icon--search"></span>
+            </label>
+          </header>
+          <div class="step__content">
+            <form class="form-interests">
+              <fieldset class="fieldset">
+                <legend class="fieldset__legend">Business</legend>
+                <div class="fieldset__flex">
+                  <label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="business" value="enterpreneurship" tabindex="-1">
+  <span class="check-tag__visual">
+    Enterpreneurship
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="business" value="marketing" tabindex="-1">
+  <span class="check-tag__visual">
+    Marketing
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="business" value="sales" tabindex="-1">
+  <span class="check-tag__visual">
+    Sales
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="business" value="consulting" tabindex="-1">
+  <span class="check-tag__visual">
+    Consulting
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="business" value="e-commerce" tabindex="-1">
+  <span class="check-tag__visual">
+    E-commerce
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="business" value="retail" tabindex="-1">
+  <span class="check-tag__visual">
+    Retail
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="business" value="real-Estate" tabindex="-1">
+  <span class="check-tag__visual">
+    Real Estate
+  </span>
+</label>
+                </div>
+              </fieldset>
+              <fieldset class="fieldset">
+                <legend class="fieldset__legend">Investing & Finance</legend>
+                <div class="fieldset__flex">
+                  <label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="investing" value="angle-Investing" tabindex="-1">
+  <span class="check-tag__visual">
+    Angle Investing
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="investing" value="crypto" tabindex="-1">
+  <span class="check-tag__visual">
+    Crypto
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="investing" value="quant-Finance" tabindex="-1">
+  <span class="check-tag__visual">
+    Quant Finance
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="investing" value="venture-capital" tabindex="-1">
+  <span class="check-tag__visual">
+    Venture Capital
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="investing" value="investment -banking" tabindex="-1">
+  <span class="check-tag__visual">
+    Investment Banking
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="investing" value="economics" tabindex="-1">
+  <span class="check-tag__visual">
+    Economics
+  </span>
+</label>
+                </div>
+              </fieldset>
+              <fieldset class="fieldset">
+                <legend class="fieldset__legend">Lifestyle</legend>
+                <div class="fieldset__flex">
+                  <label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="travel" tabindex="-1">
+  <span class="check-tag__visual">
+    Travel
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="fitness" tabindex="-1">
+  <span class="check-tag__visual">
+    Fitness
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="food" tabindex="-1">
+  <span class="check-tag__visual">
+    Food
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="gaming" tabindex="-1">
+  <span class="check-tag__visual">
+    Gaming
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="writing" tabindex="-1">
+  <span class="check-tag__visual">
+    Writing
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="reading" tabindex="-1">
+  <span class="check-tag__visual">
+    Reading
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="dinner-parties" tabindex="-1">
+  <span class="check-tag__visual">
+    Dinner Parties
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="poker" tabindex="-1">
+  <span class="check-tag__visual">
+    Poker
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="chess" tabindex="-1">
+  <span class="check-tag__visual">
+    Chess
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="cooking" tabindex="-1">
+  <span class="check-tag__visual">
+    Cooking
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="wellness" tabindex="-1">
+  <span class="check-tag__visual">
+    Wellness
+  </span>
+</label>
+<label class="check-tag">
+  <input class="check-tag__input-hidden" type="checkbox" name="lifestyle" value="parenting" tabindex="-1">
+  <span class="check-tag__visual">
+    Parenting
+  </span>
+</label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="step__control step__control--margin-top--sm">
+            <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
+            <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
+            <span class="step__message"></span>
+          </div>
+        </section>
+
+        <section class="step step--5">
+          <header class="step__header">
+            <h4 class="step__title">Tell Us About Your Self</h4>
+            <p class="step__description">
+              Select from the list and add your own interests.
+            </p>
+          </header>
+          <div class="step__content">
+            <form class="form-self">
+              <fieldset class="fieldset">
+                <div class="form-self__fieldset fieldset__flex">
+                  <label class="form-self__input input-wrapper">
+                    <input class="input-wrapper__inner input input--size--stretch input--icon" type="text" name="first-name"
+                      placeholder="First Name" tabindex="-1">
+                    <span class="input-wrapper__icon input-wrapper__icon--user"></span>
+                  </label>
+                  <label class="form-self__input input-wrapper">
+                    <input class="input-wrapper__inner input input--size--stretch input--icon" type="text" name="last-name"
+                      placeholder="Last Name" tabindex="-1">
+                    <span class="input-wrapper__icon input-wrapper__icon--user"></span>
+                  </label>
+                  <textarea class="input input--size--stretch" name="about" rows="10" placeholder="About Your Self"
+                    tabindex="-1"></textarea>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="step__control step__control--margin-top--lg">
+            <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
+            <button class="button button--primary" type="submit" data-href="finish.html" data-control-button="finish"
+              tabindex="-1">Finish</button>
+            <span class="step__message"></span>
+          </div>
+        </section>
+
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>

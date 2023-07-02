@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  function isWebp() {
+    function testWebP(callback) {
+      var webP = new Image();
+      webP.onload = webP.onerror = function () {
+        callback(webP.height == 2);
+      };
+      webP.src =
+        'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+    }
+
+    testWebP(function (support) {
+      if (support == true) {
+        document.querySelector('html').classList.add('webp');
+      } else {
+        document.querySelector('html').classList.add('no-webp');
+      }
+    });
+  }
+
+  isWebp();
+</script>
+  <link href="css/style.min.css?_v=20230620160853" rel="stylesheet">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>GAQ</title>
+</head>
+
+<body class="sign-up">
+  <div class="sign-up__wrapper">
+    <header class="sign-up__header">
+      <h1 class="visually-hidden">GAQ</h1>
+      <img class="sign-up__logo" src="./img/icons.svg#logo" alt="logo" width="68" height="31">
+    </header>
+
+    <main class="sign-up__main">
+      <h2 class="sign-up__title">Create Account</h2>
+      <p class="sign-up__text">Please register your account!</p>
+      <a class="button button--primary button--sign-up" href="form.html">Create Account</a>
+    </main>
+
+    <footer class="sign-up__footer">
+      Already have an Account?
+      <a class="sign-up__link" href="#">Sign In</a>
+    </footer>
+  </div>
+</body>
+
+</html>

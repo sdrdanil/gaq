@@ -1,0 +1,92 @@
+.upload-file {
+  $transition: .3s ease;
+  position: relative;
+  display: inline-block;
+
+  &__input-hidden {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  &__visual {
+    width: 360px;
+    // height: 360px;
+    aspect-ratio: 1 / 1;
+    background: $color-inactive;
+    border: 2px dashed $color-text-main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transition;
+  }
+
+  &__group {
+    width: 149px;
+    height: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      @extend %mask-svg;
+      --mask-svg-url: url('@img/icons.svg#gallery');
+      width: 60px;
+      height: 60px;
+      background-color: $color-text-main;
+      transition: $transition;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__text {
+    @extend %font-medium;
+    @extend %font-size-text-md;
+    color: $color-text-main;
+    transition: $transition;
+  }
+
+  &--active {
+    .upload-file__visual {
+      border-color: $color-main;
+      background-color: $color-background;
+    }
+
+    .upload-file__group::before {
+      background-color: $color-main;
+    }
+
+    .upload-file__text {
+      color: $color-main;
+    }
+  }
+}
+
+@include breakpoint-down(lg) {
+  .upload-file__visual {
+    width: 280px;
+  }
+}
+
+@include breakpoint-down(md) {
+  .upload-file__visual {
+    width: 260px;
+  }
+}
+
+@include breakpoint-down(sm) {
+  .upload-file__visual {
+    width: 60vw;
+  }
+}

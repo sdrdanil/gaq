@@ -1,0 +1,114 @@
+.card {
+  $transition: .2s ease-in;
+
+  &__input-hidden {
+    @extend %visually-hidden;
+  }
+
+  &__visual {
+    position: relative;
+    padding: 9px;
+    padding-right: 70px;
+    border: 1px solid $color-inactive;
+    background: $color-inactive;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: $transition;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border: 1px solid $color-border;
+      background-color: $color-background;
+      transition: $transition;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: $color-background;
+      transition: $transition;
+    }
+  }
+
+  &__visual:hover {
+    border: 1px solid $color-text-main;
+  }
+
+  &__input-hidden:focus-visible + &__visual {
+    outline: 1px solid black;
+  }
+
+  &__image-box {
+    flex-shrink: 0;
+    padding: 10px;
+    background-color: $color-background;
+  }
+
+  &__image {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    padding-left: 20px;
+    @extend %font-medium;
+    @extend %font-size-text-md;
+    color: $color-text-main;
+  }
+
+  
+  &--radio &__visual {
+    &::before {
+      border-radius: 50%;
+    }
+
+    &::after {
+      border-radius: 50%;
+    }
+  }
+
+  &--checkbox &__visual {
+    &::before {
+      z-index: 1;
+      border-radius: 5px;
+      background-color: transparent;
+      background-image: url('@img/icons.svg#check');
+      background-repeat: no-repeat;
+      background-size: 74%;
+      background-position: 50%;
+    }
+
+    &::after {
+      border-radius: 5px;
+      right: 25px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__input-hidden:checked + &__visual {
+    border-color: $color-main;
+    background-color: $color-background;
+
+    &::before {
+      border-color: $color-main;
+    }
+
+    &::after {
+      background-color: $color-main;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.multi-form {
+  padding: 0 0 50px;
+
+  &--active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &--hidden {
+    visibility: hidden;
+  }
+
+  &--preset {
+    height: 10px !important;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  &__progress {
+    margin-bottom: 60px;
+  }
+
+  &__steps {
+    // --height: js
+    // --step-transition: root
+    // --steps-gap: root
+    // --height: 0px; // initial transition
+
+    position: relative;
+    max-width: 1140px;
+    margin: -10px;
+    padding: 10px;
+    height: var(--height);
+    overflow: hidden;
+    transition: var(--step-transition);
+    will-change: height;
+    display: flex;
+    flex-direction: column;
+    gap: var(--steps-gap);
+    // outline: 2px dotted green;
+  }
+}

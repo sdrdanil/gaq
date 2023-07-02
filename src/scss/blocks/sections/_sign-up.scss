@@ -1,0 +1,76 @@
+.sign-up {
+  display: flex;
+
+  &::before {
+    content: '';
+    flex-basis: 50%;
+    min-height: 560px;
+    height: 100%;
+    background-color: $color-main;
+    background-image: url('@img/sign-up.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__wrapper {
+    flex-basis: 50%;
+    padding-left: 100px;
+    padding-right: 40px;
+    padding-top: 54px;
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    row-gap: 73px;
+  }
+
+  &__title {
+    @extend %text-title-lg;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    @extend %font-regular;
+    @extend %font-size-text-md;
+    color: $color-text-secondary;
+    margin-bottom: 40px;
+  }
+
+  &__footer {
+    @extend %font-regular;
+    @extend %font-size-text-sm;
+    color: $color-text-secondary;
+  }
+
+  &__link {
+    @extend %font-medium;
+    @extend %font-size-text-md;
+    color: $color-main;
+    transition: .4s ease;
+
+    &:hover {
+      color: $color-text-main;
+    }
+  }
+}
+
+@include breakpoint-down(lg) {
+  .sign-up__wrapper {
+    padding-left: 10vw;
+    padding-right: 5vw;
+    // padding-top: 54px;
+    // padding-bottom: 60px;
+    row-gap: 73px;
+  }
+}
+
+@include breakpoint-down(sm) {
+  .sign-up__wrapper {
+    flex-grow: 1;
+    padding-bottom: 100px;
+  }
+
+  .sign-up::before {
+    display: none;
+  }
+}

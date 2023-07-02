@@ -1,0 +1,39 @@
+.fieldset {
+
+  &__legend {
+    @extend %text-title-sm;
+    margin-bottom: 19px;
+  }
+
+  &__input-hidden {
+    display: none;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+
+  &__flex {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+
+  &__growed-item {
+    flex-grow: 1;
+  }
+}
+
+// @include breakpoint-down(lg) {
+//   .fieldset__grid {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+// }
+
+// @include breakpoint-down(sm) {
+//   .fieldset__grid {
+//     grid-template-columns: repeat(1, 1fr);
+//   }
+// }

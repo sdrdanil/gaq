@@ -1,0 +1,35 @@
+body {
+  height: 1px;
+  min-height: 100vh;
+}
+
+.scrollbar-on {
+  overflow-y: scroll;
+}
+
+.body-form {
+  padding: 25px 100px 0 200px;
+
+  @include breakpoint-down(lg) {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  @include breakpoint-down(md) {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
+
+// .step--1,
+// .step--2,
+// .step--3,
+// .step--4,
+// .step--5,
+.none {
+  display: none !important;
+}

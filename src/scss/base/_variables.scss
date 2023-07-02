@@ -1,0 +1,100 @@
+// Color
+$color-background: #FFF;
+$color-main: #EB3D35;
+$color-border: #E5E4E1;
+$color-icon: #B3B4BA;
+$color-text-main: #051655;
+$color-text-secondary: #747887;
+$color-inactive: #F3F6F9;
+
+
+// Font
+%font-medium {
+  font-family: 'Author-Variable', sans-serif;
+  font-style: normal;
+  font-weight: 494;
+}
+
+%font-regular {
+  font-family: 'Author-Variable', sans-serif;
+  font-style: normal;
+  font-weight: 375;
+}
+
+%font-size-title-lg {
+  font-size: 50px;
+  line-height: 1.12;
+
+  @include breakpoint-down(sm) {
+    font-size: 42px;
+  }
+}
+
+%font-size-title-sm {
+  font-size: 25px;
+  line-height: 1.12;
+
+  @include breakpoint-down(sm) {
+    font-size: 22px;
+  }
+}
+
+%font-size-text-lg {
+  font-size: 22px;
+  line-height: 1.09;
+
+  @include breakpoint-down(sm) {
+    font-size: 20px;
+  }
+}
+
+%font-size-text-md {
+  font-size: 20px;
+  line-height: 1.1;
+
+  @include breakpoint-down(sm) {
+    font-size: 18px;
+  }
+
+  @include breakpoint-down(sm) {
+    font-size: 18px;
+  }
+}
+
+%font-size-text-sm {
+  font-size: 18px;
+  line-height: 1.11;
+
+  @include breakpoint-down(sm) {
+    font-size: 16px;
+  }
+}
+
+%text-title-lg {
+  @extend %font-medium;
+  @extend %font-size-title-lg;
+  color: $color-text-main;
+}
+
+%text-title-sm {
+  @extend %font-medium;
+  @extend %font-size-title-sm;
+  color: $color-text-main;
+}
+
+%text-description {
+  @extend %font-regular;
+  @extend %font-size-text-md;
+  color: $color-text-secondary;
+}
+
+
+// Root
+:root {
+  --steps-number: 5;
+  --step: 1;
+  --steps-gap: 400px;
+  --step-transition: 1.0s linear;
+  --change-step-scroll-up-duration-ms: 200ms;
+  --change-step-pause-duration-ms: 100ms;
+}

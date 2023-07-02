@@ -1,0 +1,31 @@
+.check-tag {
+
+  &__input-hidden {
+    @extend %visually-hidden;
+  }
+
+  &__visual {
+    display: inline-block;
+    padding: 15px 24px;
+    background-color: $color-background;
+    border: 1px solid $color-border;
+    @extend %font-medium;
+    @extend %font-size-text-sm;
+    color: $color-text-secondary;
+    white-space: nowrap;
+    transition: .4s ease-in-out;
+
+    @include breakpoint-down(sm) {
+      padding: 12px 20px;
+    }
+  }
+
+  &__input-hidden:focus-visible + &__visual {
+    outline: 1px solid black;
+  }
+
+  &__input-hidden:checked + &__visual {
+    border-color: $color-text-main;
+    color: $color-text-main;
+  }
+}

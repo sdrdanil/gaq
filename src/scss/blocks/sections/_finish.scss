@@ -1,0 +1,33 @@
+.finish {
+  // padding-bottom: 40px;
+
+  &__main {
+    padding-bottom: 40px;
+  }
+
+  &__main::before {
+    content: '';
+    box-sizing: content-box;
+    display: block;
+    width: 100px;
+    height: 100px;
+    padding: 40px 0;
+    background-image: url('@img/google.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &__title-sm {
+    @extend %text-title-sm;
+  }
+
+  &__text {
+    max-width: 600px;
+    margin-top: 10px;
+    @extend %font-regular;
+    font-size: 20px;
+    line-height: 25px;
+    color: $color-text-secondary;
+  }
+}
