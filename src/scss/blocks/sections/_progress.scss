@@ -3,8 +3,8 @@
   background-repeat: no-repeat;
   background-size: var(--background-size-x) var(--circle-size);
   background-position: calc($step-1-position-x + var(--delta)) center;
-  transition: var(--step-transition);
-  will-change: background-size, background-position;
+  transition: background-position var(--step-transition);
+  // will-change: background-position;
 }
 
 .progress {

@@ -46,7 +46,7 @@
     @extend %font-medium;
     @extend %font-size-text-md;
     color: $color-main;
-    transition: .4s ease;
+    transition: color .4s ease;
 
     &:hover {
       color: $color-text-main;

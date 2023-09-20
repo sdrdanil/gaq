@@ -1,5 +1,14 @@
 .header {
-  padding-bottom: 74px;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  padding: 25px 0;
+  background: white;
+  box-shadow: 0px 20px 8px 4px white;
+
+  &__progress {
+    margin-top: 75px;
+  }
 }
 
 @include breakpoint-down(sm) {

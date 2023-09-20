@@ -1,7 +1,6 @@
 import { smoothScroll } from './modules/functional.js';
 
 // File input
-// Constants
 const uploadFile = document.querySelector('.upload-file');
 const uploadFileInput = document.querySelector('.upload-file__input-hidden');
 
@@ -28,7 +27,6 @@ uploadFileInput.addEventListener('drop', () => {
 });
 
 // Multi-Form
-// Constants
 const multiForm = document.querySelector('.multi-form');
 const frame = document.querySelector('.multi-form__steps');
 const framePaddingY =
@@ -46,7 +44,6 @@ const scrollPause = getClearValue(
   '--change-step-pause-duration-ms',
 );
 
-// Functions
 function getClearValue(elem, key, offsetRight = -2) {
   return +getComputedStyle(elem)
     .getPropertyValue(key)
@@ -108,11 +105,14 @@ function updateCurrentStep(delta) {
 }
 
 function update() {
-  setTimeout(() => {
-    updateWidth();
-    updateScrollbar();
-    updateCurrentStep(0);
-  }, 50);
+  // setTimeout(() => {
+  //   updateWidth();
+  //   updateScrollbar();
+  //   updateCurrentStep(0);
+  // }, 50);
+  updateWidth();
+  updateScrollbar();
+  updateCurrentStep(0);
 }
 
 function move(delta) {

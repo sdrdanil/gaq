@@ -16,10 +16,6 @@
     overflow: hidden;
   }
 
-  &__progress {
-    margin-bottom: 60px;
-  }
-
   &__steps {
     // --height: js
     // --step-transition: root
@@ -32,11 +28,10 @@
     padding: 10px;
     height: var(--height);
     overflow: hidden;
-    transition: var(--step-transition);
+    transition: height var(--step-transition);
     will-change: height;
     display: flex;
     flex-direction: column;
     gap: var(--steps-gap);
-    // outline: 2px dotted green;
   }
 }

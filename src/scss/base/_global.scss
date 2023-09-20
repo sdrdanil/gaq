@@ -8,7 +8,7 @@ body {
 }
 
 .body-form {
-  padding: 25px 100px 0 200px;
+  padding: 0 100px 0 200px;
 
   @include breakpoint-down(lg) {
     padding-left: 10vw;
@@ -23,6 +23,10 @@ body {
 
 .visually-hidden {
   @extend %visually-hidden;
+}
+
+.main {
+  padding-top: 35px;
 }
 
 // .step--1,

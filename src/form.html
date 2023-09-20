@@ -6,15 +6,12 @@
 })
 
 <body class="body-form">
-  <header class="header" id="header">
-    <h1 class="visually-hidden">GAQ</h1>
-    <img class="header__logo" src="@img/icons.svg#logo" alt="logo" width="68" height="31">
-  </header>
+  <div class="wrapper">
+    <header class="header" id="header">
+      <h1 class="visually-hidden">GAQ</h1>
+      <img class="header__logo" src="@img/icons.svg#logo" alt="logo" width="68" height="31">
 
-  <main class="main">
-    <section class="multi-form">
-      <h2 class="visually-hidden">Multi Form</h2>
-      <section class="multi-form__progress progress">
+      <section class="header__progress progress">
         <h3 class="visually-hidden">Progress</h3>
         <div class="progress__bar">
           <div class="progress__item" style="--icon: url('../img/icons.svg#location');"></div>
@@ -24,182 +21,189 @@
           <div class="progress__item" style="--icon: url('../img/icons.svg#user-tag');"></div>
         </div>
       </section>
+    </header>
 
-      <section class="multi-form__steps">
-        <h3 class="visually-hidden">Steps forms</h3>
+    <main class="main">
+      <section class="multi-form">
+        <h2 class="visually-hidden">Multi Form</h2>
 
-        <section class="step step--1">
-          <header class="step__header">
-            <h4 class="step__title">Which Hub Are You In?</h4>
-            <p class="step__description">
-              We are active in major cities and we schedule meetings based on time zones. Let us know your home base.
-            </p>
-            <label class="input-wrapper">
-              <input class="input-wrapper__inner input input--size--md input--icon" type="text" name="search-hub"
-                placeholder="Search your hub.." tabindex="-1">
-              <span class="input-wrapper__icon input-wrapper__icon--search"></span>
-            </label>
-          </header>
-          <div class="step__content">
-            <form class="form-hub">
-              <fieldset class="form-hub__fieldset fieldset">
-                <legend class="fieldset__legend">Popular Hub</legend>
-                <div class="fieldset__grid">
-                  @@include("html/card-array-hub.html")
-                </div>
-              </fieldset>
-            </form>
-          </div>
-          <div class="step__control step__control--margin-top--md">
-            <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
-            <span class="step__message"></span>
-          </div>
-        </section>
+        <section class="multi-form__steps">
+          <h3 class="visually-hidden">Steps forms</h3>
 
-        <section class="step step--2">
-          <header class="step__header">
-            <h4 class="step__title">What Are Your Objectives?</h4>
-            <p class="step__description">
-              Select up to 3 objectives. These will be kept private from other users but help us find relevant matches.
-            </p>
-          </header>
-          <div class="step__content">
-            <form class="form-objectives">
-              <fieldset class="form-objectives__fieldset fieldset">
-                <legend class="fieldset__legend">Select Objectives</legend>
-                <div class="fieldset__grid">
-                  @@include("html/card-array-objectives.html")
-                </div>
-              </fieldset>
-            </form>
-          </div>
-          <div class="step__control step__control--margin-top--sm">
-            <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
-            <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
-            <span class="step__message"></span>
-          </div>
-        </section>
-
-        <section class="step step--3">
-          <header class="step__header">
-            <h4 class="step__title">Fill Your Profile</h4>
-            <p class="step__description">
-              This basic information will be shown to your matches every week. Tell us what you would like to show!
-            </p>
-          </header>
-          <div class="step__content">
-            <form class="form-profile">
-              <label class="upload-file">
-                <span class="upload-file__visual">
-                  <span class="upload-file__group">
-                    <span class="upload-file__text">Upload Your Photo</span>
-                  </span>
-                </span>
-                <input class="upload-file__input-hidden" type="file" name="photo" tabindex="-1">
+          <section class="step step--1">
+            <header class="step__header">
+              <h4 class="step__title">Which Hub Are You In?</h4>
+              <p class="step__description">
+                We are active in major cities and we schedule meetings based on time zones. Let us know your home base.
+              </p>
+              <label class="input-wrapper">
+                <input class="input-wrapper__inner input input--size--md input--icon" type="text" name="search-hub"
+                  placeholder="Search your hub.." tabindex="-1">
+                <span class="input-wrapper__icon input-wrapper__icon--search"></span>
               </label>
-              <fieldset class="form-profile__fieldset fieldset">
-                <legend class="fieldset__legend">Other Profile</legend>
-                <div class="fieldset__flex">
-                  <label class="form-profile__input input-wrapper">
-                    <input class="input-wrapper__inner input input--size--stretch input--icon" type="text" name="linkedin"
-                      placeholder="LinkedIn URL" tabindex="-1">
-                    <span class="input-wrapper__icon input-wrapper__icon--linkedin"></span>
-                  </label>
-                  <label class="form-profile__input input-wrapper">
-                    <input class="input-wrapper__inner input input--size--stretch input--icon" type="text" name="twitter"
-                      placeholder="Twitter URL" tabindex="-1">
-                    <span class="input-wrapper__icon input-wrapper__icon--twitter"></span>
-                  </label>
-                </div>
-              </fieldset>
-            </form>
-          </div>
-          <div class="step__control step__control--margin-top--md">
-            <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
-            <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
-            <span class="step__message"></span>
-          </div>
-        </section>
+            </header>
+            <div class="step__content">
+              <form class="form-hub">
+                <fieldset class="form-hub__fieldset fieldset">
+                  <legend class="fieldset__legend">Popular Hub</legend>
+                  <div class="fieldset__grid">
+                    @@include("html/card-array-hub.html")
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="step__control step__control--margin-top--md">
+              <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
+              <span class="step__message"></span>
+            </div>
+          </section>
 
-        <section class="step step--4">
-          <header class="step__header">
-            <h4 class="step__title">What Are You Interested In?</h4>
-            <p class="step__description">
-              Select from the list and add your own interests.
-            </p>
-            <label class="input-wrapper">
-              <input class="input-wrapper__inner input input--size--md input--icon" type="text" name="search-interest"
-                placeholder="Add Your Interest" tabindex="-1">
-              <span class="input-wrapper__icon input-wrapper__icon--search"></span>
-            </label>
-          </header>
-          <div class="step__content">
-            <form class="form-interests">
-              <fieldset class="fieldset">
-                <legend class="fieldset__legend">Business</legend>
-                <div class="fieldset__flex">
-                  @@include("html/check-tag-array-business.html")
-                </div>
-              </fieldset>
-              <fieldset class="fieldset">
-                <legend class="fieldset__legend">Investing & Finance</legend>
-                <div class="fieldset__flex">
-                  @@include("html/check-tag-array-investing.html")
-                </div>
-              </fieldset>
-              <fieldset class="fieldset">
-                <legend class="fieldset__legend">Lifestyle</legend>
-                <div class="fieldset__flex">
-                  @@include("html/check-tag-array-lifestyle.html")
-                </div>
-              </fieldset>
-            </form>
-          </div>
-          <div class="step__control step__control--margin-top--sm">
-            <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
-            <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
-            <span class="step__message"></span>
-          </div>
-        </section>
+          <section class="step step--2">
+            <header class="step__header">
+              <h4 class="step__title">What Are Your Objectives?</h4>
+              <p class="step__description">
+                Select up to 3 objectives. These will be kept private from other users but help us find relevant
+                matches.
+              </p>
+            </header>
+            <div class="step__content">
+              <form class="form-objectives">
+                <fieldset class="form-objectives__fieldset fieldset">
+                  <legend class="fieldset__legend">Select Objectives</legend>
+                  <div class="fieldset__grid">
+                    @@include("html/card-array-objectives.html")
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="step__control step__control--margin-top--sm">
+              <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
+              <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
+              <span class="step__message"></span>
+            </div>
+          </section>
 
-        <section class="step step--5">
-          <header class="step__header">
-            <h4 class="step__title">Tell Us About Your Self</h4>
-            <p class="step__description">
-              Select from the list and add your own interests.
-            </p>
-          </header>
-          <div class="step__content">
-            <form class="form-self">
-              <fieldset class="fieldset">
-                <div class="form-self__fieldset fieldset__flex">
-                  <label class="form-self__input input-wrapper">
-                    <input class="input-wrapper__inner input input--size--stretch input--icon" type="text" name="first-name"
-                      placeholder="First Name" tabindex="-1">
-                    <span class="input-wrapper__icon input-wrapper__icon--user"></span>
-                  </label>
-                  <label class="form-self__input input-wrapper">
-                    <input class="input-wrapper__inner input input--size--stretch input--icon" type="text" name="last-name"
-                      placeholder="Last Name" tabindex="-1">
-                    <span class="input-wrapper__icon input-wrapper__icon--user"></span>
-                  </label>
-                  <textarea class="input input--size--stretch" name="about" rows="10" placeholder="About Your Self"
-                    tabindex="-1"></textarea>
-                </div>
-              </fieldset>
-            </form>
-          </div>
-          <div class="step__control step__control--margin-top--lg">
-            <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
-            <button class="button button--primary" type="submit" data-href="finish.html" data-control-button="finish"
-              tabindex="-1">Finish</button>
-            <span class="step__message"></span>
-          </div>
-        </section>
+          <section class="step step--3">
+            <header class="step__header">
+              <h4 class="step__title">Fill Your Profile</h4>
+              <p class="step__description">
+                This basic information will be shown to your matches every week. Tell us what you would like to show!
+              </p>
+            </header>
+            <div class="step__content">
+              <form class="form-profile">
+                <label class="upload-file">
+                  <span class="upload-file__visual">
+                    <span class="upload-file__group">
+                      <span class="upload-file__text">Upload Your Photo</span>
+                    </span>
+                  </span>
+                  <input class="upload-file__input-hidden" type="file" name="photo" tabindex="-1">
+                </label>
+                <fieldset class="form-profile__fieldset fieldset">
+                  <legend class="fieldset__legend">Other Profile</legend>
+                  <div class="fieldset__flex">
+                    <label class="form-profile__input input-wrapper">
+                      <input class="input-wrapper__inner input input--size--stretch input--icon" type="text"
+                        name="linkedin" placeholder="LinkedIn URL" tabindex="-1">
+                      <span class="input-wrapper__icon input-wrapper__icon--linkedin"></span>
+                    </label>
+                    <label class="form-profile__input input-wrapper">
+                      <input class="input-wrapper__inner input input--size--stretch input--icon" type="text"
+                        name="twitter" placeholder="Twitter URL" tabindex="-1">
+                      <span class="input-wrapper__icon input-wrapper__icon--twitter"></span>
+                    </label>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="step__control step__control--margin-top--md">
+              <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
+              <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
+              <span class="step__message"></span>
+            </div>
+          </section>
 
+          <section class="step step--4">
+            <header class="step__header">
+              <h4 class="step__title">What Are You Interested In?</h4>
+              <p class="step__description">
+                Select from the list and add your own interests.
+              </p>
+              <label class="input-wrapper">
+                <input class="input-wrapper__inner input input--size--md input--icon" type="text" name="search-interest"
+                  placeholder="Add Your Interest" tabindex="-1">
+                <span class="input-wrapper__icon input-wrapper__icon--search"></span>
+              </label>
+            </header>
+            <div class="step__content">
+              <form class="form-interests">
+                <fieldset class="fieldset">
+                  <legend class="fieldset__legend">Business</legend>
+                  <div class="fieldset__flex">
+                    @@include("html/check-tag-array-business.html")
+                  </div>
+                </fieldset>
+                <fieldset class="fieldset">
+                  <legend class="fieldset__legend">Investing & Finance</legend>
+                  <div class="fieldset__flex">
+                    @@include("html/check-tag-array-investing.html")
+                  </div>
+                </fieldset>
+                <fieldset class="fieldset">
+                  <legend class="fieldset__legend">Lifestyle</legend>
+                  <div class="fieldset__flex">
+                    @@include("html/check-tag-array-lifestyle.html")
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="step__control step__control--margin-top--sm">
+              <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
+              <button class="button button--primary" data-control-button="next" tabindex="-1">Next</button>
+              <span class="step__message"></span>
+            </div>
+          </section>
+
+          <section class="step step--5">
+            <header class="step__header">
+              <h4 class="step__title">Tell Us About Your Self</h4>
+              <p class="step__description">
+                Select from the list and add your own interests.
+              </p>
+            </header>
+            <div class="step__content">
+              <form class="form-self">
+                <fieldset class="fieldset">
+                  <div class="form-self__fieldset fieldset__flex">
+                    <label class="form-self__input input-wrapper">
+                      <input class="input-wrapper__inner input input--size--stretch input--icon" type="text"
+                        name="first-name" placeholder="First Name" tabindex="-1">
+                      <span class="input-wrapper__icon input-wrapper__icon--user"></span>
+                    </label>
+                    <label class="form-self__input input-wrapper">
+                      <input class="input-wrapper__inner input input--size--stretch input--icon" type="text"
+                        name="last-name" placeholder="Last Name" tabindex="-1">
+                      <span class="input-wrapper__icon input-wrapper__icon--user"></span>
+                    </label>
+                    <textarea class="input input--size--stretch" name="about" rows="10" placeholder="About Your Self"
+                      tabindex="-1"></textarea>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="step__control step__control--margin-top--lg">
+              <button class="button button--secondary" data-control-button="back" tabindex="-1">Back</button>
+              <button class="button button--primary" type="submit" data-href="finish.html" data-control-button="finish"
+                tabindex="-1">Finish</button>
+              <span class="step__message"></span>
+            </div>
+          </section>
+
+        </section>
       </section>
-    </section>
-  </main>
+    </main>
+  </div>
 </body>
 
 </html>

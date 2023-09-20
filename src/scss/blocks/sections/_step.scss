@@ -5,8 +5,7 @@
   position: relative;
   top: var(--step-offset-top);
   width: 100%;
-  transition: var(--step-transition);
-  // outline: 2px dotted blueviolet;
+  transition: top var(--step-transition);
 
   @for $i from 1 through 10 {
     &--#{$i} {
